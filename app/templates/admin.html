@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Marcello V1 · Panel administrativo</title>
+  <link rel="icon" href="/static/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/common.css">
+  <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body class="admin">
+  <header class="admin-bar">
+    <span class="brandbar"><img src="/static/assets/marcello-v1-logo.jpg" alt="Marcello V1" width="1200" height="298"><img src="/static/assets/spacellprint-logo.jpg" alt="SpaCellPrint" width="1200" height="298"><b>Panel administrativo</b></span>
+    <label class="toggle"><input type="checkbox" id="include-test"> Incluir datos de prueba</label>
+    <button id="logout" class="btn" type="button">Cerrar sesión</button>
+  </header>
+  <main class="admin-main">
+    <section id="kpis" class="kpis"></section>
+
+    <section class="panel">
+      <h2>Exportar resultados</h2>
+      <div class="exports">
+        <a class="btn primary" id="x-xlsx" href="/api/admin/export/xlsx">Descargar Excel (.xlsx)</a>
+        <a class="btn primary" id="x-csv" href="/api/admin/export/csv">Descargar CSV (.csv)</a>
+        <a class="btn primary" id="x-json" href="/api/admin/export/json">Descargar JSON (.json)</a>
+        <span class="btn-group">
+          <span>Descargar PostgreSQL</span>
+          <a class="btn" href="/api/admin/export/postgres.sql">.sql</a>
+          <a class="btn" href="/api/admin/export/postgres.dump">.dump</a>
+        </span>
+      </div>
+      <p class="hint">Excel, CSV y JSON excluyen los datos de prueba salvo que active la casilla. Los respaldos de PostgreSQL son siempre la base completa.</p>
+    </section>
+
+    <section class="grid">
+      <div class="panel"><h2>Participantes por perfil</h2><div id="ch-profile"></div></div>
+      <div class="panel"><h2>Encuestas por fecha (UTC)</h2><div id="ch-date"></div></div>
+      <div class="panel"><h2>Distribución geográfica</h2><h3>Países</h3><div id="ch-countries"></div><h3>Departamentos / regiones</h3><div id="ch-regions"></div><h3>Ciudades</h3><div id="ch-cities"></div></div>
+      <div class="panel"><h2>Promedio de preguntas Likert (1 a 5)</h2><div id="ch-likert"></div></div>
+      <div class="panel wide"><h2>Frecuencia de opciones (selección múltiple y prioridad)</h2><div id="ch-multi" class="multi"></div></div>
+    </section>
+
+    <section class="panel">
+      <h2>Respuestas</h2>
+      <form id="filters" class="filters">
+        <input id="f-q" placeholder="Buscar (ID, ciudad, perfil…)" maxlength="100">
+        <select id="f-profile"><option value="">Todos los perfiles</option></select>
+        <input id="f-country" placeholder="País" maxlength="100">
+        <input id="f-region" placeholder="Departamento" maxlength="100">
+        <input id="f-city" placeholder="Ciudad" maxlength="100">
+        <label>Desde <input id="f-from" type="date"></label>
+        <label>Hasta <input id="f-to" type="date"></label>
+        <button class="btn primary" type="submit">Filtrar</button>
+        <button class="btn" type="reset" id="f-reset">Limpiar</button>
+      </form>
+      <div class="table-wrap"><table id="table"><thead><tr>
+        <th>Identificador</th><th>Perfil profesional</th><th>Fecha (UTC)</th><th>País</th><th>Departamento</th><th>Ciudad</th><th></th>
+      </tr></thead><tbody></tbody></table></div>
+      <div class="pager"><button id="prev" class="btn" type="button">Anterior</button><span id="page-info"></span><button id="next" class="btn" type="button">Siguiente</button></div>
+    </section>
+  </main>
+  <dialog id="detail"><div id="detail-body"></div><button id="detail-close" class="btn" type="button">Cerrar</button></dialog>
+  <script src="/static/js/dom.js"></script>
+  <script src="/static/js/admin.js"></script>
+</body>
+</html>

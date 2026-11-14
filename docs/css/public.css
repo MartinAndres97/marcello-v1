@@ -1,0 +1,33 @@
+.site-header{display:flex;justify-content:center;padding:.9rem 1.2rem;border-bottom:1px solid var(--line);background:#fff}
+.brand-company{height:46px;width:auto;display:block}
+.brand-product{width:min(460px,88vw);height:auto;display:block;margin:0 auto}
+main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+.hero{text-align:center;padding:2.5rem 0 1.5rem}
+.hero h1{margin:.4rem 0 0}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;color:var(--primary);font-weight:700;font-size:.8rem;margin:0}
+.lead{color:var(--muted);font-size:1.15rem;max-width:36rem;margin:.8rem auto 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+.card h2{font-size:1.1rem;margin-top:1rem}.card h2:first-child{margin-top:0}
+.checks{padding-left:1.2rem}.checks li{margin:.3rem 0}
+#start{margin-top:1rem}
+.progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:.4rem 0 1.2rem}
+.progress>div{height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));width:0}
+.step-label{color:var(--muted);font-size:.9rem;margin:0}
+.q-title{font-size:1.25rem;margin:.2rem 0 1rem;outline:none}
+.options{border:0;padding:0;margin:0;display:grid;gap:.6rem}
+.option{display:flex;gap:.7rem;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:.7rem .9rem;cursor:pointer;background:#fff}
+.option:hover{border-color:var(--primary)}
+.option:has(input:checked){border-color:var(--primary);background:#ecfeff}
+.option input{margin-top:.3rem;accent-color:var(--primary)}
+.nav{display:flex;justify-content:space-between;gap:.6rem;margin-top:1.2rem}
+.loc-grid{display:grid;gap:.9rem}
+.loc-grid label{display:grid;gap:.3rem;font-weight:600}
+.summary dl{margin:0}.summary dt{font-weight:700;margin-top:.9rem}.summary dd{margin:.2rem 0 0;color:var(--muted)}
+.summary .edit{font-size:.85rem;padding:.2rem .6rem;margin-left:.5rem}
+.done{text-align:center}.done .ref{font-family:ui-monospace,monospace;background:var(--bg);padding:.3rem .6rem;border-radius:6px;word-break:break-all}
+.site-footer{text-align:center;color:var(--muted);font-size:.85rem;padding:1.2rem 1rem 2rem}
+.site-footer img{height:34px;width:auto;margin:0 .8rem;vertical-align:middle}
+.site-footer p{margin:.6rem 0 0}
+@media(min-width:640px){.likert{grid-template-columns:repeat(5,1fr)}.likert .option{flex-direction:column;align-items:center;text-align:center}}
+
+.demo-note{margin-bottom:1rem;background:#fef3c7;border-color:#fcd34d;color:#92400e}

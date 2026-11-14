@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <link rel="icon" href="/static/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/common.css">
+  <link rel="stylesheet" href="/static/css/public.css">
+</head>
+<body class="public">
+  <header class="site-header"><a href="/" aria-label="Inicio"><img class="brand-company" src="/static/assets/spacellprint-logo.jpg" alt="SpaCellPrint" width="1200" height="298"></a></header>
+  <main>
+    <section id="landing">
+      <div class="hero">
+        <p class="eyebrow">Levantamiento de requisitos</p>
+        <h1><img class="brand-product" src="/static/assets/marcello-v1-logo.jpg" alt="MARCELLO V1" width="1200" height="298"></h1>
+        <p class="lead">Software especializado para simular tejidos destinados a bioimpresión 3D, con información personalizada del paciente.</p>
+      </div>
+      <div class="card">
+        <h2>Sobre el proyecto</h2>
+        <p>Marcello V1 es una propuesta de software para apoyar la simulación de tejidos antes de su bioimpresión, incorporando características individuales del paciente, información genética y celular, validación y trazabilidad. Esta encuesta recoge la opinión de especialistas para definir los requisitos del sistema.</p>
+        <h2>Sobre la encuesta</h2>
+        <ul class="checks">
+          <li>15 preguntas, todas obligatorias (aprox. 5 a 8 minutos).</li>
+          <li>Todos los participantes responden exactamente el mismo cuestionario.</li>
+          <li>Es anónima: no se piden nombres, documentos, correos ni ubicación.</li>
+        </ul>
+        <button id="start" class="btn primary big" type="button">Comenzar encuesta</button>
+      </div>
+    </section>
+    <section id="survey" hidden><div id="app" class="card" aria-live="polite"></div></section>
+    <noscript><p class="card">Esta encuesta requiere JavaScript habilitado.</p></noscript>
+  </main>
+  <footer class="site-footer">
+    <img src="/static/assets/spacellprint-logo.jpg" alt="SpaCellPrint" width="1200" height="298">
+    <img src="/static/assets/marcello-v1-logo.jpg" alt="Marcello V1" width="1200" height="298">
+    <p>Marcello V1, software de SpaCellPrint · Encuesta de levantamiento de requisitos</p>
+  </footer>
+  <script src="/static/js/dom.js?v=2"></script>
+  <script src="/static/js/survey.js?v=2"></script>
+</body>
+</html>
